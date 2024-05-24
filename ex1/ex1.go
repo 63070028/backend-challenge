@@ -14,9 +14,9 @@ func main() {
 	json.Unmarshal(byteValue, &data2)
 	data3 := make([][]int, 0)
 
-	fmt.Println(resultMaxSum(data1))
-	fmt.Println(resultMaxSum(data2))
-	fmt.Println(resultMaxSum(data3))
+	fmt.Println(resultMaxSum(data1)) // should 237
+	fmt.Println(resultMaxSum(data2)) // should 7273
+	fmt.Println(resultMaxSum(data3)) // should 0
 }
 
 func resultMaxSum(tree [][]int) int {
