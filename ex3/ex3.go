@@ -11,10 +11,6 @@ import (
 	"github.com/gofiber/fiber/v3"
 )
 
-type Beef struct {
-	Beef map[string]uint32
-}
-
 func main() {
 	// Initialize a new Fiber app
 	app := fiber.New()
@@ -29,15 +25,15 @@ func main() {
 		data, _ := http.Get("https://baconipsum.com/api/?type=meat-and-filler&paras=99&format=text")
 		body, _ := io.ReadAll(data.Body)
 
-		var beefs Beef
-		beefs.Beef = map[string]uint32{}
+		var beefs = map[string]map[string]uint32{}
+		beefs["beef"] = map[string]uint32{}
 
 		for _, b := range regexp.MustCompile(`\s+|\.|,`).Split(string(body), -1) {
 			if b != "" {
-				if _, ok := beefs.Beef[strings.ToLower(b)]; !ok {
-					beefs.Beef[strings.ToLower(b)] = 1
+				if _, ok := beefs["beef"][strings.ToLower(b)]; !ok {
+					beefs["beef"][strings.ToLower(b)] = 1
 				} else {
-					beefs.Beef[strings.ToLower(b)]++
+					beefs["beef"][strings.ToLower(b)]++
 				}
 			}
 		}
