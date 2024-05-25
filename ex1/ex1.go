@@ -9,7 +9,7 @@ import (
 
 func main() {
 	data1 := [][]int{{59}, {73, 41}, {52, 40, 53}, {26, 53, 6, 34}}
-	byteValue, _ := os.ReadFile("/Users/myner/Desktop/GitHub/backend-challenge/files/hard.json")
+	byteValue, _ := os.ReadFile("./files/hard.json")
 	data2 := make([][]int, 0)
 	json.Unmarshal(byteValue, &data2)
 	data3 := make([][]int, 0)
