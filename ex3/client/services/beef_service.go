@@ -2,11 +2,10 @@ package services
 
 import (
 	"context"
-	"fmt"
 )
 
 type BeefService interface {
-	GetBeef() error
+	GetBeef() (*BeefResponse, error) 
 }
 
 type beefService struct {
@@ -17,15 +16,13 @@ func NewBeefService(beefSerivceClient BeefSerivceClient) BeefService {
 	return beefService{beefSerivceClient}
 }
 
-func (base beefService) GetBeef() error {
+func (base beefService) GetBeef() (*BeefResponse, error) {
 	req := BeefRequest{}
 
 	res, err := base.beefSerivceClient.GetBeef(context.Background(), &req)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
-	fmt.Printf("Response: %v", res)
-
-	return nil
+	return res, err
 }
