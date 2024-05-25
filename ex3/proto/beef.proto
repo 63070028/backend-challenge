@@ -7,15 +7,9 @@ service BeefSerivce {
     rpc GetBeef(BeefRequest)returns(BeefResponse);
 }
 
-message Beef {
-    string name = 1;
-    int32 value = 2;
-}
-
-
 message BeefRequest{
 }
 
-message BeefResponse {
-    repeated Beef beefs = 1;
+message BeefResponse { 
+    map<string, int32> beef = 1;
 }

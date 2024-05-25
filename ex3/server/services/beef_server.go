@@ -33,13 +33,8 @@ func (beefSerivceServer) GetBeef(ctx context.Context, req *BeefRequest) (*BeefRe
 		}
 	}
 
-	var beefs []*Beef
-	for name, value := range mapBeef {
-		beefs = append(beefs, &Beef{Name: name, Value: value})
-	}
-
 	res := BeefResponse{
-		Beefs: beefs,
+		Beef: mapBeef,
 	}
 
 	return &res, nil
