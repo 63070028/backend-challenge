@@ -84,3 +84,8 @@
     }
 }
 ```
+
+--- how start --
+1. cd ex3/server/ -> go run server.go
+2. cd ex3/client/ -> go run client.go 
+3. http://localhost:8080/beef/summary
