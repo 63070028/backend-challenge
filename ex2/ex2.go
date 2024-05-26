@@ -10,7 +10,9 @@ func main() {
 	fmt.Println(decodePassword("==RLL")) //should 000210
 	fmt.Println(decodePassword("=LLRR")) //should 221012
 	fmt.Println(decodePassword("RRL=R")) //should 012001
-
+	fmt.Println("")
+	fmt.Println("")
+	fmt.Println("Other Case")
 	fmt.Println(decodePassword("RRR"))   //should 0123
 	fmt.Println(decodePassword("LLL"))   //should 3210
 	fmt.Println(decodePassword("LLL=L")) //should 432110

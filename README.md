@@ -1,5 +1,27 @@
 # backend-challenge (ข้อสอบสนุกมากครับ โดยเฉพาะข้อ 2)
 
+## My Answer
+```
+ข้อ 1
+
+cd ex1/
+go run ex1.go
+```
+```
+ข้อ 2
+
+cd ex2/
+go run ex2.go
+```
+```
+ข้อ 3
+
+1. cd ex3/server/ -> go run server.go
+2. cd ex3/client/ -> go run client.go 
+3. http://localhost:8080/beef/summary
+```
+
+
 ## 1. จงหาเส้นทางที่มีค่ามากที่สุด
 
 ![Figure 1-1](files/max-path.png)
@@ -85,7 +107,3 @@
 }
 ```
 
---- how start --
-1. cd ex3/server/ -> go run server.go
-2. cd ex3/client/ -> go run client.go 
-3. http://localhost:8080/beef/summary
