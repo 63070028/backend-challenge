@@ -23,12 +23,12 @@ func (beefSerivceServer) GetBeef(ctx context.Context, req *BeefRequest) (*BeefRe
 
 	var mapBeef = make(map[string]int32)
 
-	for _, b := range regexp.MustCompile(`\s+|\.|,`).Split(string(body), -1) {
+	for _, b := range regexp.MustCompile(`\s+|\.|,`).Split(strings.ToLower(string(body)), -1) {
 		if b != "" {
-			if _, ok := mapBeef[strings.ToLower(b)]; !ok {
-				mapBeef[strings.ToLower(b)] = 1
+			if _, ok := mapBeef[b]; !ok {
+				mapBeef[b] = 1
 			} else {
-				mapBeef[strings.ToLower(b)]++
+				mapBeef[b]++
 			}
 		}
 	}
