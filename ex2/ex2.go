@@ -27,7 +27,7 @@ func decodePassword(s string) string {
 		if v == '=' {
 			pass[i+1] = pass[i]
 		} else if v == 'L' {
-			if pass[i] == 1 {
+			if pass[i] != 0 {
 				pass[i+1] = 0
 			} else {
 				pass[i+1] = -1
